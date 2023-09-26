@@ -1,0 +1,105 @@
+Your goal is to retrieve every user function called from the first function referenced by this stacktrace:
+TypeError: Cannot read properties of undefined (reading 'id')
+at createTask (example/app.js:18:51)
+at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+at next (node_modules/express/lib/router/route.js:144:13)
+at Route.dispatch (node_modules/express/lib/router/route.js:114:3)
+at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+at node_modules/express/lib/router/index.js:284:15
+at Function.process_params (node_modules/express/lib/router/index.js:346:12)
+at next (node_modules/express/lib/router/index.js:280:10)
+at node_modules/body-parser/lib/read.js:137:5
+at AsyncResource.runInAsyncScope (node:async_hooks:203:9)
+    
+For each user function, note the name of every function that is called and read the code of these functions. 
+Check the require statements in the user functions to know which files you need to read.   
+You can ask to read many function at once. 
+
+You already have the code of the following user functions:
+filePath: example/app.js
+functionName: createTask
+```js
+const database = require('./example/database');
+const { verifyTask } = require('./example/verify');
+
+function createTask (req, res) {
+  const newTask = req.body;
+  verifyTask(newTask);
+  database.addTask(newTask);
+  res.status(201).send(`Task ${newTask.metadata.id} saved successfully`);
+}
+```
+filePath: ./example/database
+functionName: addTask
+```js
+
+
+function addTask(newTask) {
+  const tasks = readTasksFromFile();
+  tasks.push({ ...newTask, metadata: { id: generateId() } });
+  writeTasksToFile(tasks);
+}
+```
+filePath: ./example/verify
+functionName: verifyTask
+```js
+
+
+function verifyTask(task) {
+  
+  if (typeof task.title !== 'string' || task.title.length > 120) {
+    throw new Error('Invalid title');
+  }
+
+  if (typeof task.position !== 'number' || task.position < 0) {
+    throw new Error('Invalid position');
+  }
+
+  return true;
+}
+```
+
+Decide if you need to read the code of more user function or if you are done because you have the code of all the user function.
+You can use the following actions:
+
+<Action name="READ_FUNCTION">
+  <Parameter name="filePath">
+    // path to the file containing the function
+  </Parameter>
+
+  <Parameter name="functionName">
+    // name of the function
+  </Parameter>
+</Action>
+
+<Action name="DONE"></Action>
+
+Answer only with your next actions.
+----
+<Action name="READ_FUNCTION">
+  <Parameter name="filePath">
+    ./example/database
+  </Parameter>
+
+  <Parameter name="functionName">
+    readTasksFromFile
+  </Parameter>
+</Action>
+<Action name="READ_FUNCTION">
+  <Parameter name="filePath">
+    ./example/database
+  </Parameter>
+
+  <Parameter name="functionName">
+    generateId
+  </Parameter>
+</Action>
+<Action name="READ_FUNCTION">
+  <Parameter name="filePath">
+    ./example/database
+  </Parameter>
+
+  <Parameter name="functionName">
+    writeTasksToFile
+  </Parameter>
+</Action>
