@@ -1,5 +1,7 @@
 # LLM Experiments
 
+![gen-ai.fr](https://gen-ai.fr/wp-content/uploads/brizy/imgs/logo-gen-ai.fr-compressed-97x97x0x0x96x97x1695585553.webp)
+
 This repository contains various experiments or tutorial around LLMs.
 
 ## Prompt Engineering
