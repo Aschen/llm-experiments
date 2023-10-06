@@ -1,6 +1,6 @@
 # How To: LLM Agent
 
-This directory contains the code for an article explaining how to create a LLM Agent with Node.js and Langchain.
+This directory contains the code for an [article explaining how to create a LLM Agent with Node.js and Langchain](https://gen-ai.fr/large-language-model/creer-un-agent-llm-en-node-js-partie-1/).
 
 The [lib/](lib/) directory contains the code of the Agent.
 
