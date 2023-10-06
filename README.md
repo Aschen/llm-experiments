@@ -4,7 +4,7 @@ This repository contains various experiments or tutorial around LLMs.
 
 ## Prompt Engineering
 
-I'm trying to constantly benchmark my intuition regarding to prompt engineering.  
+I'm trying to constantly benchmark my intuitions regarding prompt engineering.  
 
 - [Use delimiters to insert informations](https://github.com/Aschen/llm-experiments/tree/master/prompt-delimiter-benchmark)
 - [Prefer the XML format to parse the answer](https://github.com/Aschen/llm-experiments/tree/master/prompt-action-benchmark)
