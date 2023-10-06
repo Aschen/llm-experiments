@@ -11,7 +11,7 @@ I'm trying to constantly benchmark my intuitions regarding prompt engineering.
 
 ## Articles
 
-Source code for the article I wrote on https://gen-ai.fr
+Source code for the articles I wrote on https://gen-ai.fr
 
 - [Create LLM Agents with Node.js](https://github.com/Aschen/llm-experiments/tree/master/article-agent-llm) ([article](https://gen-ai.fr/large-language-model/creer-un-agent-llm-en-node-js-partie-1/))
 
