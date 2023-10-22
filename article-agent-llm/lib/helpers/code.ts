@@ -127,6 +127,9 @@ export function replaceFunctionCode(filePath, functionName, newFunctionCode) {
   writeFile(filePath, updatedCode);
 }
 
-export function removeRequire(functionCode) {
-  return functionCode.replace(/.*require\(.+\);?/g, "");
+export function cleanCode(functionCode) {
+  return functionCode
+    .replace(/.*require\(.+\);?/g, "")
+    .replace("```js", "")
+    .replace("```", "");
 }

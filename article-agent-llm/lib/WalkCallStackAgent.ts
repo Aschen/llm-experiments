@@ -65,7 +65,10 @@ Answer only with your next actions.`,
 
       const answer = await this.model.call(prompt);
 
-      writeFileSync(`./prompt-${i++}.txt`, prompt + "\n----\n" + answer);
+      writeFileSync(
+        `./prompts/walkcallstack-prompt-${i++}.txt`,
+        prompt + "\n----\n" + answer
+      );
 
       const actions = extractActions(answer);
 

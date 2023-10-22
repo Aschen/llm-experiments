@@ -10,6 +10,6 @@ The [example/](example/) directory contains a sample express application contain
 
 ## Run it yourself
 
-First, export your OpenAI API key.
+First, export your `OPENAI_API_KEY`.
 
-Then run with `bun run run.ts` (or use any other JS runtime)
+Then run with `bun run.ts` (or use any other JS runtime)

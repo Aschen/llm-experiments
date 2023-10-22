@@ -85,6 +85,7 @@ Answer only with your next actions.
     readTasksFromFile
   </Parameter>
 </Action>
+
 <Action name="READ_FUNCTION">
   <Parameter name="filePath">
     ./example/database
@@ -94,6 +95,7 @@ Answer only with your next actions.
     generateId
   </Parameter>
 </Action>
+
 <Action name="READ_FUNCTION">
   <Parameter name="filePath">
     ./example/database

@@ -1,6 +1,14 @@
-import { WalkCallStackAgent } from "./lib/WalkCallStackAgent";
 import { stacktrace } from "./example/inputs";
+import { WalkCallStackAgent } from "./lib/WalkCallStackAgent";
+import { BugFixAgent } from "./lib/BugfixAgent";
 
-const agent = new WalkCallStackAgent({ stacktrace });
+const walkCallStackAgent = new WalkCallStackAgent({ stacktrace });
 
-await agent.run();
+await walkCallStackAgent.run();
+
+const bugfixAgent = new BugFixAgent({
+  stacktrace,
+  userFunctions: walkCallStackAgent.userFunctions,
+});
+
+await bugfixAgent.run();
