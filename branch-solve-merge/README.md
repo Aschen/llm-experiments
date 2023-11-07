@@ -26,6 +26,14 @@ For a startup in the early stages, it is important to find a balance between fix
 
 All prompts are available in the `prompts/` directory.
 
+### Run yourself
+
+Install dependencies: `langchain` and `llm-agents`
+
+Modify the example you want to run in `run.ts`
+
+Run with Bun to avoid Typescript stack headache: `bun run.ts`
+
 ## Example 1: Merge meaningful info from answers
 
 Question:
