@@ -1,8 +1,6 @@
 import { PromptTemplate } from 'langchain/prompts';
+import { FileCache, OneShotAction, AgentOneShot } from 'llm-agents';
 
-import { AgentOneShot } from '../../AgentOneShot';
-import { OneShotAction } from '../../actions/LLMAction';
-import { FileCache } from '../../cache/FileCache';
 import { AnswersAnalyses } from './BSMExecutor';
 
 class MergedAnswerAction extends OneShotAction {

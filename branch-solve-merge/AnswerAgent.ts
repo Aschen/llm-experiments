@@ -1,6 +1,5 @@
 import { PromptTemplate } from 'langchain/prompts';
-
-import { AbstractAgent } from '../../AbstractAgent';
+import { AbstractAgent } from 'llm-agents';
 
 export class AnswerAgent extends AbstractAgent {
   protected template = new PromptTemplate({

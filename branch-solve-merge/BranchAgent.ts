@@ -1,8 +1,6 @@
 import { PromptTemplate } from 'langchain/prompts';
 
-import { AgentOneShot } from '../../AgentOneShot';
-import { FileCache } from '../../cache/FileCache';
-import { OneShotAction } from '../../actions/LLMAction';
+import { OneShotAction, FileCache, AgentOneShot } from 'llm-agents';
 
 export type CriteriaDefinition = {
   name: string;

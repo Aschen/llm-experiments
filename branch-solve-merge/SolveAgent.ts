@@ -1,8 +1,5 @@
 import { PromptTemplate } from 'langchain/prompts';
-
-import { AgentOneShot } from '../../AgentOneShot';
-import { OneShotAction } from '../../actions/LLMAction';
-import { FileCache } from '../../cache/FileCache';
+import { FileCache, OneShotAction, AgentOneShot } from 'llm-agents';
 
 class AnalysisAction extends OneShotAction {
   public name = 'analysis';
