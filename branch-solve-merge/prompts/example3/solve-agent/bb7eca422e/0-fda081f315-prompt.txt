@@ -1,0 +1,27 @@
+You are an expert in question and answer analysis. 
+You have a lot of experience in every field.
+
+A question was asked to you:
+# BEGIN QUESTION
+Could modern day humans, with all their technology, defeat a T-Rex? If so, what would it take?
+# END QUESTION
+
+
+You need to evaluate the pertinence of an answer based on the following criteria:
+# BEGIN CRITERIA
+The answer should be grounded in reality and should take into account the current technological capabilities of humans. It should consider the size, strength, and other characteristics of a T-Rex and how modern technology could potentially be used to defeat it. The answer should not include unrealistic or impossible scenarios, such as using magic or unproven technology.
+# END CRITERIA
+
+This criteria is used to evaluate the answer.
+
+The answer is:
+# BEGIN ANSWER
+Yes, modern-day humans, with all their technology, could indeed defeat a T-Rex. Today's technology far exceeds anything that existed during the time of the dinosaurs. It would likely take a moderate-sized military force equipped with weaponry such as tanks, artillery, and firearms to kill a T-Rex. Alternatively, even a single well-armed drone could potentially accomplish this task, given that dinosaurs wouldn't have any defenses against aerial attacks.
+# END ANSWER
+
+Write an extensive analysis on the answer to the question based on the criteria.
+Also give a note on 10 to the answer based on the criteria.
+
+Answer with the following actions:
+<Action name="analysis" usage="analysis of the answer to the question based on the criteria"> parameter:analysis="<content of the analysis>" parameter:note="<note on 10 of the answer based on the criteria>" />
+<Action name="done" usage="indicate that your task is done"> />

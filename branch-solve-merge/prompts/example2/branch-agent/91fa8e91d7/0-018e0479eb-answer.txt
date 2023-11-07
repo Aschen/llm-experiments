@@ -1,0 +1,7 @@
+<Action name="criteria" usage="describe one of the criteria to evaluate the answer. you can use this action multiple times to describe multiple criteria"> parameter:criteria="Comprehensiveness" parameter:definition="The answer should cover all aspects of the question. It should discuss good practices in terms of remuneration, particularly the balance between fixed salary, variable salary, and BSPCE (French stock options). It should also address the system that rewards employees who invest themselves." />
+
+<Action name="criteria" usage="describe one of the criteria to evaluate the answer. you can use this action multiple times to describe multiple criteria"> parameter:criteria="Practicality" parameter:definition="The answer should not only be theoretical but also practical. It should provide concrete examples or strategies on how to balance the different types of remuneration and how to reward employees who invest themselves. The answer should be applicable in a real-world business setting." />
+
+<Action name="criteria" usage="describe one of the criteria to evaluate the answer. you can use this action multiple times to describe multiple criteria"> parameter:criteria="Expertise" parameter:definition="The answer should demonstrate a deep understanding of the subject matter. It should be able to explain the pros and cons of different remuneration strategies, the legal and financial implications of BSPCE, and the impact of these strategies on employee motivation and company performance." />
+
+<Action name="done" usage="indicate that your task is done">

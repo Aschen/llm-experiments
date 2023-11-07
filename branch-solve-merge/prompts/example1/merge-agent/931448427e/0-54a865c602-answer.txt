@@ -1,0 +1,7 @@
+<Action name="bestAnswer">
+  <Parameter name="index">
+    1
+  </Parameter>
+</Action>
+<Action name="mergedAnswer" usage="use the analyses and the answer content to create a new answer to the question"> parameter:answer="A good ratio of daily active users to total users for an up and coming iOS social network app can vary depending on the specific features and use cases of the app. Industry benchmarks suggest that leading social network platforms like Twitter and Facebook have a DAU to MAU ratio of 44% and 65% respectively. However, these are aspirational figures and may not be immediately attainable for a new app. For regular, indie, or startup apps, a ratio of around 20% could be a reasonable benchmark. It's important to note that this ratio can vary depending on the app's category. For instance, a location-based social network might aim for a higher ratio, while a more local event or travel focused social app would have a lower ceiling. Other metrics such as user drop off and logins per month should also be considered when evaluating the success of the app. It's also crucial to monitor the correlation between new sign-ups and DAU growth, as this can indicate whether the app's marketing strategies are effective and whether it's attracting the right audience." />
+<Action name="done" usage="indicate that your task is done"> />

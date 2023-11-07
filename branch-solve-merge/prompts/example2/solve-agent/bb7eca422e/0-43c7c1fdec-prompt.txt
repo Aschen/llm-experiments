@@ -1,0 +1,50 @@
+You are an expert in question and answer analysis. 
+You have a lot of experience in every field.
+
+A question was asked to you:
+# BEGIN QUESTION
+Quelles sont selon vous les bonnes pratiques en terme de rémunération?
+Particulièrement la balance entre le salaire fixe, le salaire variable et les BSPCE.
+On aimerait avoir un système qui permette de récompenser les salariés qui s'investissent
+# END QUESTION
+
+
+You need to evaluate the pertinence of an answer based on the following criteria:
+# BEGIN CRITERIA
+The answer should not only be theoretical but also practical. It should provide concrete examples or strategies on how to balance the different types of remuneration and how to reward employees who invest themselves. The answer should be applicable in a real-world business setting.
+# END CRITERIA
+
+This criteria is used to evaluate the answer.
+
+The answer is:
+# BEGIN ANSWER
+L'utilisateur Adrien a posé une question concernant les salaires appropriés dans une startup en phase de démarrage (seed). Il a demandé si un salaire annuel de 70K serait acceptable, tout en cherchant à maintenir un équilibre entre la rétention des ingénieurs et la limitation de la consommation de trésorerie.
+
+Le thème principal de la discussion est la détermination d'un salaire approprié pour les ingénieurs dans une startup en phase de démarrage.
+
+Les thèmes abordés sont :
+
+- Le niveau de salaire approprié pour une startup en phase de démarrage.
+- L'impact de l'emplacement géographique sur le niveau de salaire.
+- L'utilisation de parts de l'entreprise (BSPCE) comme incitation.
+
+Les points de vue des participants sont les suivants :
+
+- Sylvain a suggéré de se référer à une étude sur les salaires dans les startups pour avoir une idée du marché actuel.
+- Hugo a souligné que 70K est une somme importante et que les startups ne devraient pas chercher à être dans le top 10% du marché. Il a également mentionné l'importance des exonérations de charges pour les JEI.
+- Alexandre a proposé l'ouverture à des parts de l'entreprise comme stratégie à long terme pour garder et motiver les talents.
+- Robin a suggéré de chercher des personnes ambitieuses et de leur offrir un salaire médian. Il a mentionné que 70K pourrait être excessif, surtout pour une startup en phase de démarrage.
+- Éric a confirmé que 60K est un bon salaire et que 70K semble beaucoup pour une startup en phase de démarrage.
+- Yoann a souligné l'importance de la variété des sujets et de la liberté dans une startup pour compenser un salaire médian.
+
+Il semble y avoir un consensus sur le fait que 70K pourrait être un salaire excessif pour une startup en phase de démarrage. Plusieurs participants ont suggéré de se situer autour de la moyenne du marché et d'utiliser d'autres incitations, comme des parts de l'entreprise, pour attirer et retenir les talents.
+
+En conclusion, Adrien pourrait envisager d'offrir un salaire autour de la moyenne du marché et d'utiliser des parts de l'entreprise comme incitation supplémentaire. Il devrait également tenir compte de l'emplacement géographique de la startup lors de la détermination du salaire.
+# END ANSWER
+
+Write an extensive analysis on the answer to the question based on the criteria.
+Also give a note on 10 to the answer based on the criteria.
+
+Answer with the following actions:
+<Action name="analysis" usage="analysis of the answer to the question based on the criteria"> parameter:analysis="<content of the analysis>" parameter:note="<note on 10 of the answer based on the criteria>" />
+<Action name="done" usage="indicate that your task is done"> />

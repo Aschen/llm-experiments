@@ -1,0 +1,37 @@
+You are an expert in question and answer analysis. 
+You have a lot of experience in every field.
+
+A question was asked to you:
+# BEGIN QUESTION
+What is a good ratio of daily active users to total users for an up and coming iOS social network app?
+# END QUESTION
+
+
+You need to evaluate the pertinence of an answer based on the following criteria:
+# BEGIN CRITERIA
+The answer should explain the factors that can influence the ratio of daily active users to total users. This could include things like the type of app, its target audience, its stage of growth, and its marketing strategies. Understanding these factors can help to explain why a particular ratio might be considered 'good' for one app but not for another.
+# END CRITERIA
+
+This criteria is used to evaluate the answer.
+
+The answer is:
+# BEGIN ANSWER
+If your daily active users % is dropping as you're growing the user base, your app is in trouble.
+
+    From the outset, during the growth phase you want more % of users to become DAU...not less. If you're growth is not showing a correlation between new sign ups and DAU growth, your new sign ups are the wrong audience/ mis-spent marketing dollars.
+    
+    From a growth perspective, you would want to see an increase in DAU as more members join the network due to the expanded opportunity to connect with people and information.
+    
+    Having said that: 1700 users isn't really a large enough sample size, especially if many of the 167 daily users are likely friends / family / employees / invested parties, which would throw off the ratio.
+    
+    Also, DAU isn't the only metric. If user drop off is increasing (users who sign up and only sign in 1 or 2 times) it doesn't matter if they contribute to DAU because they never come back. The ratio of 'disinterested' or 'non sticky' users (ones who don't come back) is much more important number for a fledgling app/service.
+    
+    Another metric would be logins per month. Even if 90% of the sign ups never return... if the users who love you network come back more often over time, that would show a success trend. You could then try to expand within the demographic (or interests groups) that find your network irresistible. 
+# END ANSWER
+
+Write an extensive analysis on the answer to the question based on the criteria.
+Also give a note on 10 to the answer based on the criteria.
+
+Answer with the following actions:
+<Action name="analysis" usage="analysis of the answer to the question based on the criteria"> parameter:analysis="<content of the analysis>" parameter:note="<note on 10 of the answer based on the criteria>" />
+<Action name="done" usage="indicate that your task is done"> />

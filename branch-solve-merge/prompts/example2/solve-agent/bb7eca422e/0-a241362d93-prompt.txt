@@ -1,0 +1,52 @@
+You are an expert in question and answer analysis. 
+You have a lot of experience in every field.
+
+A question was asked to you:
+# BEGIN QUESTION
+Quelles sont selon vous les bonnes pratiques en terme de rémunération?
+Particulièrement la balance entre le salaire fixe, le salaire variable et les BSPCE.
+On aimerait avoir un système qui permette de récompenser les salariés qui s'investissent
+# END QUESTION
+
+
+You need to evaluate the pertinence of an answer based on the following criteria:
+# BEGIN CRITERIA
+The answer should cover all aspects of the question. It should discuss good practices in terms of remuneration, particularly the balance between fixed salary, variable salary, and BSPCE (French stock options). It should also address the system that rewards employees who invest themselves.
+# END CRITERIA
+
+This criteria is used to evaluate the answer.
+
+The answer is:
+# BEGIN ANSWER
+**Introduction**
+
+Karl a demandé des conseils sur le pourcentage d'équité qu'il pourrait attendre en échange de son aide pour créer un MVP pour une startup en IA, sans rémunération financière.
+
+**Thèmes abordés:**
+
+- Pourcentage d'équité approprié pour le travail de Karl Siva.
+- Risques et avantages de travailler pour de l'équité.
+- L'engagement des cofondateurs de la startup.
+
+**Points de vue des participants:**
+
+- Pierre suggère que Karl devrait demander 30% d'équité, compte tenu de l'importance de son rôle dans la création du MVP. Il propose également une autre option où Karl pourrait facturer son temps si la startup obtient un financement.
+- William souligne l'importance de connaître l'apport de Karl par rapport aux autres et suggère qu'il devrait avoir un pourcentage proche de celui du cofondateur technique.
+- Guillaume pense que Karl devrait être rémunéré comme un cofondateur s'il apporte autant au produit. Il suggère également que Karl pourrait être payé comme une prestation si la collaboration est de courte durée.
+- Robin et Gauthier proposent une option où Karl pourrait obtenir un pourcentage d'équité avec une option de rachat.
+
+**Consensus**
+
+Il n'y a pas de consensus clair sur le pourcentage exact d'équité que Karl devrait demander. Cependant, la plupart des participants s'accordent à dire qu'il devrait être rémunéré de manière significative pour son travail, que ce soit par le biais de l'équité ou d'une autre forme de rémunération.
+
+**Conclusion**
+
+En se basant sur les différentes opinions, Karl pourrait envisager de demander un pourcentage d'équité significatif pour son travail, ou de négocier une forme de rémunération qui pourrait inclure une option de rachat. Il devrait également prendre en compte l'engagement des cofondateurs et le potentiel de la startup.
+# END ANSWER
+
+Write an extensive analysis on the answer to the question based on the criteria.
+Also give a note on 10 to the answer based on the criteria.
+
+Answer with the following actions:
+<Action name="analysis" usage="analysis of the answer to the question based on the criteria"> parameter:analysis="<content of the analysis>" parameter:note="<note on 10 of the answer based on the criteria>" />
+<Action name="done" usage="indicate that your task is done"> />

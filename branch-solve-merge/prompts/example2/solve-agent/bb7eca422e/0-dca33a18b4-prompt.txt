@@ -1,0 +1,51 @@
+You are an expert in question and answer analysis. 
+You have a lot of experience in every field.
+
+A question was asked to you:
+# BEGIN QUESTION
+Quelles sont selon vous les bonnes pratiques en terme de rémunération?
+Particulièrement la balance entre le salaire fixe, le salaire variable et les BSPCE.
+On aimerait avoir un système qui permette de récompenser les salariés qui s'investissent
+# END QUESTION
+
+
+You need to evaluate the pertinence of an answer based on the following criteria:
+# BEGIN CRITERIA
+The answer should demonstrate a deep understanding of the subject matter. It should be able to explain the pros and cons of different remuneration strategies, the legal and financial implications of BSPCE, and the impact of these strategies on employee motivation and company performance.
+# END CRITERIA
+
+This criteria is used to evaluate the answer.
+
+The answer is:
+# BEGIN ANSWER
+Introduction:
+
+Valentin a posé une question concernant les salaires des développeurs juniors, en particulier ceux qui viennent de sortir de l'école. Il est intéressé par le profil Dev Backend, utilisant les technologies Microsoft, à Paris. Il a entendu parler de salaires allant de 40k à 50k, mais il est un peu perdu et cherche des informations plus précises.
+
+Thèmes abordés:
+
+- Salaires des développeurs juniors
+- Influence de la technologie utilisée sur le salaire
+- Influence de l'entreprise sur le salaire
+
+Points de vue des participants:
+
+- William a partagé son expérience de recrutement d'une alternante l'année dernière à 43K pour un poste JVM/Java. Il a mentionné que les profils ops sont généralement mieux payés et certains ont commencé à +45K.
+- Éric a souligné qu'il n'y a pas un seul salaire moyen, mais plusieurs, en fonction de divers facteurs tels que les conditions de travail, l'attractivité de l'entreprise, la présence de variable, d'intéressement, etc. Il estime qu'un bon développeur backend junior bac+5 à Paris pourrait gagner environ 45k.
+- André a mentionné que Microsoft a moins d'attrait, ce qui conduit souvent à des salaires plus élevés. Il a conseillé de se faire une grille de salaires et de s'y tenir.
+
+Consensus:
+
+Il semble y avoir un consensus sur le fait que le salaire d'un développeur junior peut varier en fonction de plusieurs facteurs, y compris la technologie utilisée, l'entreprise et le marché. Cependant, une fourchette de salaire de 40k à 55k semble être une estimation raisonnable pour un développeur backend junior à Paris.
+
+Conclusion:
+
+En se basant sur les informations recueillies, Valentin pourrait s'attendre à ce qu'un développeur backend junior à Paris gagne entre 40k et 55k, bien que cela puisse varier en fonction de divers facteurs. Il pourrait être utile pour lui de se faire une grille de salaires et de s'y tenir lors des négociations.
+# END ANSWER
+
+Write an extensive analysis on the answer to the question based on the criteria.
+Also give a note on 10 to the answer based on the criteria.
+
+Answer with the following actions:
+<Action name="analysis" usage="analysis of the answer to the question based on the criteria"> parameter:analysis="<content of the analysis>" parameter:note="<note on 10 of the answer based on the criteria>" />
+<Action name="done" usage="indicate that your task is done"> />

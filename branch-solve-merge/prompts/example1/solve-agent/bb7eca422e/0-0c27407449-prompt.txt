@@ -1,0 +1,35 @@
+You are an expert in question and answer analysis. 
+You have a lot of experience in every field.
+
+A question was asked to you:
+# BEGIN QUESTION
+What is a good ratio of daily active users to total users for an up and coming iOS social network app?
+# END QUESTION
+
+
+You need to evaluate the pertinence of an answer based on the following criteria:
+# BEGIN CRITERIA
+The answer should explain the factors that can influence the ratio of daily active users to total users. This could include things like the type of app, its target audience, its stage of growth, and its marketing strategies. Understanding these factors can help to explain why a particular ratio might be considered 'good' for one app but not for another.
+# END CRITERIA
+
+This criteria is used to evaluate the answer.
+
+The answer is:
+# BEGIN ANSWER
+I assume you are asking about the Daily Active User to Monthly Active Users ratio (DAU to MAU)
+
+    Short version: if you are a “regular”, “indie” or “startup” app, ~20% is a reasonable benchmark generically. It really depends on your use case/category (social will be higher whereas travel would be low)
+    
+    Mega franchises have much higher DAU to MAUs (Facebook mid 60s, Twitter and Netflix low 40s)….but they really are at a different level that makes them aspirational only in most cases.
+    
+    There are a number of DAU to MAU benchmarks throughout Quora (including a handful of my answers) if you need more details.
+    
+    Hope that helped at all.
+# END ANSWER
+
+Write an extensive analysis on the answer to the question based on the criteria.
+Also give a note on 10 to the answer based on the criteria.
+
+Answer with the following actions:
+<Action name="analysis" usage="analysis of the answer to the question based on the criteria"> parameter:analysis="<content of the analysis>" parameter:note="<note on 10 of the answer based on the criteria>" />
+<Action name="done" usage="indicate that your task is done"> />

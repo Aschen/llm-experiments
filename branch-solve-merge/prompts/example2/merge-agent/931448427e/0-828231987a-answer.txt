@@ -1,0 +1,7 @@
+<Action name="bestAnswer">
+  <Parameter name="index">
+    0
+  </Parameter>
+</Action>
+<Action name="mergedAnswer" usage="use the analyses and the answer content to create a new answer to the question"> parameter:answer="Pour une startup en phase de démarrage, il est important de trouver un équilibre entre le salaire fixe, le salaire variable et les BSPCE. Un salaire fixe trop élevé peut être excessif pour une startup en phase de démarrage. Il est donc recommandé de se situer autour de la moyenne du marché. Les BSPCE peuvent être utilisés comme une incitation supplémentaire pour attirer et retenir les talents. Cependant, il est important de noter que le salaire peut varier en fonction de plusieurs facteurs, y compris la technologie utilisée, l'entreprise et le marché. En outre, il est essentiel de mettre en place un système qui récompense les employés qui s'investissent. Cela pourrait inclure des options d'équité, des bonus de performance ou d'autres formes de rémunération variable. Enfin, il est important de prendre en compte l'emplacement géographique de la startup lors de la détermination du salaire." />
+<Action name="done" usage="indicate that your task is done"> />
