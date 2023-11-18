@@ -1,0 +1,105 @@
+You are a developer.
+
+Your goal is to retrieve every user function called from the first function referenced by this stacktrace:
+TypeError: Cannot read properties of undefined (reading 'id')
+at createTask (/home/aschen/projects/stacktrace-explanator/examples/context-understanding/app.js:20:51)
+at /home/aschen/projects/stacktrace-explanator/examples/context-understanding/app.js:25:5
+at Layer.handle [as handle_request] (/home/aschen/projects/stacktrace-explanator/node_modules/express/lib/router/layer.js:95:5)
+at next (/home/aschen/projects/stacktrace-explanator/node_modules/express/lib/router/route.js:144:13)
+at Route.dispatch (/home/aschen/projects/stacktrace-explanator/node_modules/express/lib/router/route.js:114:3)
+at Layer.handle [as handle_request] (/home/aschen/projects/stacktrace-explanator/node_modules/express/lib/router/layer.js:95:5)
+at /home/aschen/projects/stacktrace-explanator/node_modules/express/lib/router/index.js:284:15
+at Function.process_params (/home/aschen/projects/stacktrace-explanator/node_modules/express/lib/router/index.js:346:12)
+at next (/home/aschen/projects/stacktrace-explanator/node_modules/express/lib/router/index.js:280:10)
+at /home/aschen/projects/stacktrace-explanator/node_modules/body-parser/lib/read.js:137:5
+    
+For each user function, note the name of every function that is called and read the code of these functions. 
+Check the require statements in the user functions to know which files you need to read.   
+You can ask to read many function at once. 
+
+Since you already have the code of the following user functions:
+filePath: /home/aschen/projects/stacktrace-explanator/examples/context-understanding/app.js
+code:
+```js
+const database = require('/home/aschen/projects/stacktrace-explanator/examples/context-understanding/database.js');
+const { verifyTask } = require('/home/aschen/projects/stacktrace-explanator/examples/context-understanding/verify.js');
+
+function createTask (req, res) {
+  const newTask = req.body;
+  verifyTask(newTask);
+  const savedTask = database.addTask(newTask);
+  res.status(201).send(`Task ${savedTask.metadata.id} saved successfully`);
+}
+```
+filePath: /home/aschen/projects/stacktrace-explanator/examples/context-understanding/verify.js
+code:
+```js
+function verifyTask(task) {
+  if (typeof task.title !== 'string' || task.title.length > 120) {
+    throw new Error('Invalid title');
+  }
+  if (typeof task.position !== 'number' || task.position < 0) {
+    throw new Error('Invalid position');
+  }
+  return true;
+}
+```
+filePath: /home/aschen/projects/stacktrace-explanator/examples/context-understanding/database.js
+code:
+```js
+function addTask(newTask) {
+  const tasks = readTasksFromFile();
+  tasks.push({ ...newTask, metadata: { id: generateId() } });
+  writeTasksToFile(tasks);
+  return newTask;
+}
+```
+
+Decide if you need to read the code of more user function or if you need to stop because you have the code of all the user function.
+Use one of the following actions to continue:
+<Action name="READ_FUNCTION">
+  <Parameter name="filePath">
+    // path to the file containing the function
+  </Parameter>
+
+  <Parameter name="functionName">
+    // name of the function
+  </Parameter>
+</Action>
+
+<Action name="STOP"></Action>
+
+
+You next actions should be:
+  
+
+-----------------
+
+To continue the investigation, we need to read the code of the functions `readTasksFromFile` and `writeTasksToFile` since they are called within the `addTask` function in the `database.js` file. We also need to ensure that we understand the `generateId` function, as it is used to create the `id` for the new task metadata.
+
+<Action name="READ_FUNCTION">
+  <Parameter name="filePath">
+    /home/aschen/projects/stacktrace-explanator/examples/context-understanding/database.js
+  </Parameter>
+  <Parameter name="functionName">
+    readTasksFromFile
+  </Parameter>
+</Action>
+
+<Action name="READ_FUNCTION">
+  <Parameter name="filePath">
+    /home/aschen/projects/stacktrace-explanator/examples/context-understanding/database.js
+  </Parameter>
+  <Parameter name="functionName">
+    writeTasksToFile
+  </Parameter>
+</Action>
+
+<Action name="READ_FUNCTION">
+  <Parameter name="filePath">
+    /home/aschen/projects/stacktrace-explanator/examples/context-understanding/database.js
+  </Parameter>
+  <Parameter name="functionName">
+    generateId
+  </Parameter>
+</Action>

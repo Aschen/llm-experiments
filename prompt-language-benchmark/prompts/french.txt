@@ -1,0 +1,111 @@
+Vous êtes un développeur.
+
+Votre objectif est de récupérer chaque fonction utilisateur appelée depuis la première fonction référencée par cette trace de pile :
+TypeError: Cannot read properties of undefined (reading 'id')
+at createTask (/home/aschen/projects/stacktrace-explanator/examples/context-understanding/app.js:20:51)
+at /home/aschen/projects/stacktrace-explanator/examples/context-understanding/app.js:25:5
+at Layer.handle [as handle_request] (/home/aschen/projects/stacktrace-explanator/node_modules/express/lib/router/layer.js:95:5)
+at next (/home/aschen/projects/stacktrace-explanator/node_modules/express/lib/router/route.js:144:13)
+at Route.dispatch (/home/aschen/projects/stacktrace-explanator/node_modules/express/lib/router/route.js:114:3)
+at Layer.handle [as handle_request] (/home/aschen/projects/stacktrace-explanator/node_modules/express/lib/router/layer.js:95:5)
+at /home/aschen/projects/stacktrace-explanator/node_modules/express/lib/router/index.js:284:15
+at Function.process_params (/home/aschen/projects/stacktrace-explanator/node_modules/express/lib/router/index.js:346:12)
+at next (/home/aschen/projects/stacktrace-explanator/node_modules/express/lib/router/index.js:280:10)
+at /home/aschen/projects/stacktrace-explanator/node_modules/body-parser/lib/read.js:137:5
+
+Pour chaque fonction utilisateur, notez le nom de chaque fonction qui est appelée et lisez le code de ces fonctions.
+Vérifiez les instructions require dans les fonctions utilisateur pour savoir quels fichiers vous devez lire.
+Vous pouvez demander à lire plusieurs fonctions à la fois.
+
+Puisque vous avez déjà le code des fonctions utilisateur suivantes :
+filePath: /home/aschen/projects/stacktrace-explanator/examples/context-understanding/app.js
+code:
+```js
+const database = require('/home/aschen/projects/stacktrace-explanator/examples/context-understanding/database.js');
+const { verifyTask } = require('/home/aschen/projects/stacktrace-explanator/examples/context-understanding/verify.js');
+
+function createTask (req, res) {
+  const newTask = req.body;
+  verifyTask(newTask);
+  const savedTask = database.addTask(newTask);
+  res.status(201).send(`Task ${savedTask.metadata.id} saved successfully`);
+}
+```
+filePath: /home/aschen/projects/stacktrace-explanator/examples/context-understanding/verify.js
+code:
+```js
+function verifyTask(task) {
+  if (typeof task.title !== 'string' || task.title.length > 120) {
+    throw new Error('Invalid title');
+  }
+  if (typeof task.position !== 'number' || task.position < 0) {
+    throw new Error('Invalid position');
+  }
+  return true;
+}
+```
+filePath: /home/aschen/projects/stacktrace-explanator/examples/context-understanding/database.js
+code:
+```js
+function addTask(newTask) {
+  const tasks = readTasksFromFile();
+  tasks.push({ ...newTask, metadata: { id: generateId() } });
+  writeTasksToFile(tasks);
+  return newTask;
+}
+```
+
+Décidez si vous devez lire le code de plus de fonctions utilisateur ou si vous devez vous arrêter parce que vous avez le code de toutes les fonctions utilisateur.
+Utilisez l'une des actions suivantes pour continuer :
+<Action name="READ_FUNCTION">
+  <Parameter name="filePath">
+    // path to the file containing the function
+  </Parameter>
+
+  <Parameter name="functionName">
+    // name of the function
+  </Parameter>
+</Action>
+
+<Action name="STOP"></Action>
+
+
+Vos prochaines actions devraient être :
+  
+
+-----------------
+
+Pour résoudre le problème, nous devons examiner les fonctions qui sont appelées par `createTask` et qui pourraient être responsables de l'erreur `TypeError: Cannot read properties of undefined (reading 'id')`. En regardant le code de `createTask`, nous voyons qu'il appelle `verifyTask` et `database.addTask`. Nous avons déjà le code de `verifyTask`, et il ne semble pas y avoir de propriété `id` qui est lue dans cette fonction.
+
+Cependant, dans la fonction `addTask` du module `database.js`, nous voyons que `newTask` est retourné après avoir ajouté une propriété `metadata` avec un `id`. L'erreur pourrait provenir de cette partie du code si `newTask` est `undefined` ou si la propriété `metadata` n'est pas correctement ajoutée à `newTask`.
+
+Le code de `addTask` fait référence à deux autres fonctions : `readTasksFromFile` et `writeTasksToFile`. Il fait également référence à une fonction `generateId` qui est utilisée pour créer l'ID de la nouvelle tâche. Pour comprendre complètement d'où vient l'erreur, nous devons examiner ces fonctions pour voir si elles manipulent correctement les données et ne retournent pas `undefined` ou une structure de données incorrecte.
+
+Nous devons donc lire le code des fonctions `readTasksFromFile`, `writeTasksToFile` et `generateId`.
+
+<Action name="READ_FUNCTION">
+  <Parameter name="filePath">
+    /home/aschen/projects/stacktrace-explanator/examples/context-understanding/database.js
+  </Parameter>
+  <Parameter name="functionName">
+    readTasksFromFile
+  </Parameter>
+</Action>
+
+<Action name="READ_FUNCTION">
+  <Parameter name="filePath">
+    /home/aschen/projects/stacktrace-explanator/examples/context-understanding/database.js
+  </Parameter>
+  <Parameter name="functionName">
+    writeTasksToFile
+  </Parameter>
+</Action>
+
+<Action name="READ_FUNCTION">
+  <Parameter name="filePath">
+    /home/aschen/projects/stacktrace-explanator/examples/context-understanding/database.js
+  </Parameter>
+  <Parameter name="functionName">
+    generateId
+  </Parameter>
+</Action>
