@@ -25,10 +25,7 @@ at Function.process_params (/home/aschen/projects/stacktrace-explanator/node_mod
 at next (/home/aschen/projects/stacktrace-explanator/node_modules/express/lib/router/index.js:280:10)
 at /home/aschen/projects/stacktrace-explanator/node_modules/body-parser/lib/read.js:137:5`;
 
-const userFunctions1: string[] = [];
-const userFunctions2: string[] = [];
-
-userFunctions1.push(`filePath: /home/aschen/projects/stacktrace-explanator/examples/context-understanding/app.js
+const userFunctions1 = `filePath: /home/aschen/projects/stacktrace-explanator/examples/context-understanding/app.js
 code:
 \`\`\`js
 const database = require('/home/aschen/projects/stacktrace-explanator/examples/context-understanding/database.js');
@@ -40,8 +37,9 @@ function createTask (req, res) {
   const savedTask = database.addTask(newTask);
   res.status(201).send(\`Task \${savedTask.metadata.id} saved successfully\`);
 }
-\`\`\``);
-userFunctions1.push(`filePath: /home/aschen/projects/stacktrace-explanator/examples/context-understanding/verify.js
+\`\`\`
+
+filePath: /home/aschen/projects/stacktrace-explanator/examples/context-understanding/verify.js
 code:
 \`\`\`js
 function verifyTask(task) {
@@ -53,8 +51,9 @@ function verifyTask(task) {
   }
   return true;
 }
-\`\`\``);
-userFunctions1.push(`filePath: /home/aschen/projects/stacktrace-explanator/examples/context-understanding/database.js
+\`\`\`
+
+filePath: /home/aschen/projects/stacktrace-explanator/examples/context-understanding/database.js
 code:
 \`\`\`js
 function addTask(newTask) {
@@ -63,39 +62,7 @@ function addTask(newTask) {
   writeTasksToFile(tasks);
   return newTask;
 }
-\`\`\``);
-userFunctions2.push(`filePath: /home/aschen/projects/stacktrace-explanator/examples/context-understanding/database.js
-code:
-\`\`\`js
-function readTasksFromFile() {
-  let tasksData = '[]';
-  try {
-      tasksData = fs.readFileSync('./tasks.json');
-  } catch (err) {
-      if (err.code === 'ENOENT') {
-          console.log('tasks.json not found, creating a new one.');
-          fs.writeFileSync('./tasks.json', tasksData);
-      } else {
-          throw err;
-      }
-  }
-  return JSON.parse(tasksData);
-}
-\`\`\``);
-userFunctions2.push(`filePath: /home/aschen/projects/stacktrace-explanator/examples/context-understanding/database.js
-code:
-\`\`\`js
-function generateId() {
-  return Math.floor(Math.random() * 1000);
-}
-\`\`\``);
-userFunctions2.push(`filePath: /home/aschen/projects/stacktrace-explanator/examples/context-understanding/database.js
-code:
-\`\`\`js
-function writeTasksToFile(tasks) {
-  fs.writeFileSync('./tasks.json', JSON.stringify(tasks));
-}
-\`\`\``);
+\`\`\``;
 
 const promptTemplateFrench = new PromptTemplate({
   template: frenchTemplate,
